@@ -1,27 +1,22 @@
 pipeline {
   agent any
     
+  tools {nodejs "LocalNPM"}
     
   stages {
         
     stage('Git') {
       steps {
-        git 'https://github.com/****/****'
+        git 'https://github.com/sri-adil/Personalised_youtube'
       }
     }
      
     stage('Build') {
       steps {
         sh 'npm install'
-         sh '<<Build Command>>'
+	sh 'npm run build'
       }
     }  
     
-            
-    stage('Test') {
-      steps {
-        sh 'node test'
-      }
-    }
   }
 }
