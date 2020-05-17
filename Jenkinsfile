@@ -1,7 +1,7 @@
 pipeline {
   agent any
     
-  tools {nodejs "LocalNPM"}
+  tools {nodejs "localnode"}
     
   stages {
         
