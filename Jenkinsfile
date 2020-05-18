@@ -1,15 +1,22 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine' 
-            args '-p 3000:3000' 
-        }
+  agent any
+    
+  tools {nodejs "localnode"}
+    
+  stages {
+        
+    stage('Git') {
+      steps {
+        git 'https://github.com/sri-adil/Personalised_youtube'
+      }
     }
-    stages {
-        stage('Build') { 
-            steps {
-                sh 'npm install' 
-            }
-        }
-    }
+     
+    stage('Build') {
+      steps {
+        sh 'npm install'
+	sh 'npm run build'
+      }
+    }  
+    
+  }
 }
