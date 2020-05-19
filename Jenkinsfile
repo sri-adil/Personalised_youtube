@@ -26,21 +26,19 @@ pipeline {
   }
   agent any
     
-  tools {nodejs "LocalNPM"}
+  tools {nodejs "localnode"}
     
   stages {
         
     stage('Git') {
       steps {
-        git 'https://github.com/thyanmol/Personal_Youtube_App'
+        git 'https://github.com/sri-adil/Personalised_youtube'
       }
     }
      
     stage('Build image') {
-        /* This builds the actual image */
-
 	    script{
-        app = docker.build("thyanmol/youtube-1.0")
+        app = docker.build("81196/youtube_api")
     }
     }
 
@@ -53,7 +51,7 @@ pipeline {
 
     stage('Push image') {
 	    script{
-        docker.withRegistry('https://registry.hub.docker.com', 'thyanmol-docker') {
+        docker.withRegistry('https://registry.hub.docker.com', 'sri-docker') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
             } 
