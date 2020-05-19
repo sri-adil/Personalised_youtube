@@ -43,12 +43,12 @@ pipeline {
 	    }}
     }
 
-    stage('Test image') {
+    /*stage('Test image') {
         
         app.inside {
             echo "Tests passed"
         }
-    }
+    }*/
 
     stage('Push image') {
 	    steps{
