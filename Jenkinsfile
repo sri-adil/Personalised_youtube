@@ -63,7 +63,9 @@ pipeline {
     	}
 	
 	stage('Deploying image with rundeck') {
-             build job: 'personalised_youtube(rundeck)'
+		steps{
+             		build job: 'personalised_youtube(rundeck)'
+		}
 	}
   }
 }
