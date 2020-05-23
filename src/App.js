@@ -14,7 +14,7 @@ class App extends React.Component
     }
 
     componentDidMount(){
-        this.handleSubmit('Taylor Swift reputation')
+        this.handleSubmit('devops')
     }
 
     onVideoSelect = (video) =>
