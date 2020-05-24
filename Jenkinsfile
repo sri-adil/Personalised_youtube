@@ -23,14 +23,7 @@ pipeline {
 		 }
 	    }
 
-	stage('Test') {
-            steps {
-		 script{
-                	
-			 sh 'CI=true npm test'
-		 }
-            }
-        }
+	
 		
 	    stage('Push image') {
 		 steps{
@@ -49,5 +42,14 @@ pipeline {
              		build job: 'personalised_youtube(rundeck)'
 		}
 	}
-  }
+  
+	stage('Test') {
+            steps {
+		 script{
+                	
+			 sh 'CI=true npm test'
+		 }
+            }
+        }
+	}
 }
