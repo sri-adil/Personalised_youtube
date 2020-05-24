@@ -1,5 +1,6 @@
 pipeline {
 	environment {
+		CI = '',
     		app = ''
  	 }
   	agent any
@@ -25,8 +26,8 @@ pipeline {
 	stage('Test') {
             steps {
 		 script{
-                	sh 'chmod +x test.sh'
-			 sh './test.sh'
+                	
+			 sh 'CI=true npm test'
 		 }
             }
         }
