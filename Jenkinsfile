@@ -13,7 +13,7 @@ pipeline {
 		git 'https://github.com/sri-adil/Personalised_youtube'
 	      	}
     	    }
-     
+     	
 	    stage('Build image') {
 		 steps{
 		    script{
@@ -22,7 +22,12 @@ pipeline {
 		 }
 	    }
 
-
+	stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+		
 	    stage('Push image') {
 		 steps{
 		    script{
