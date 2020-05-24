@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import App from './App';
 
 test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const res = await fetch("http://localhost:3000/");
+  if (res.status >= 400)
+  throw new Error("Oops!! Something went wrong") 
 });
