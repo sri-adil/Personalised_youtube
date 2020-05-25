@@ -1,9 +1,32 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import ReactDOM from 'react-dom';
+import { configure, shallow } from 'enzyme';
+import { expect } from 'chai';
 import App from './App';
+import Adapter from 'enzyme-adapter-react-16'
+import { Paper, Typography, Button} from '@material-ui/core';
+import { VideoDetail, VideoList, SearchBar } from './component';
+configure({ adapter: new Adapter() });
 
-test('renders learn react link', async () => {
-  const res = await fetch("http://localhost:3000/");
-  if (res.status >= 400)
-  throw new Error("Oops!! Something went wrong") 
+describe('App component testing', function() {
+it('Checks VideoDetail component', function() {
+const wrapper = shallow(<App />); 
+expect(wrapper.find(VideoDetail)).to.have.length(1);
 });
+
+it('Checks VideoList component', function() {
+const wrapper = shallow(<App />); 
+expect(wrapper.find(SearchBar)).to.have.length(1);
+});
+
+it('Checks SearchBar component', function() {
+const wrapper = shallow(<App />); 
+expect(wrapper.find(SearchBar)).to.have.length(1);
+});
+
+it('Checks SearchBar component', function() {
+const wrapper = shallow(<App />); 
+expect(wrapper.find(Button)).to.have.length(0);
+});
+
+}); 
