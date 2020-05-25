@@ -21,10 +21,10 @@ pipeline {
 		}
 	}
 		stage('Test') {
-		timeout(time: 10, unit: 'SECONDS')
-			{
 			  steps{
 				script{
+					timeout(time: 10, unit: 'SECONDS')
+			{
 					sh 'npm test'
 				}}
 			}
