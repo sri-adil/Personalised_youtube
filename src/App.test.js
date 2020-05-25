@@ -5,7 +5,7 @@ import { expect } from 'chai';
 import App from './App';
 import Adapter from 'enzyme-adapter-react-16'
 import { Paper, Typography, Button} from '@material-ui/core';
-import { VideoDetail, VideoList, SearchBar } from './component';
+import { VideoDetail, VideoList, SearchBar } from './components';
 configure({ adapter: new Adapter() });
 
 describe('App component testing', function() {
