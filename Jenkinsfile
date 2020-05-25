@@ -28,6 +28,7 @@ pipeline {
 				script{
 					try {
                         sh 'npm test'
+			sleep(time: 20, unit: "SECONDS")
                      
                     } catch (Throwable e) {
                         echo "Caught ${e.toString()}"
