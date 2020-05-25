@@ -21,10 +21,14 @@ pipeline {
 		}
 	}
 		stage('Test') {
-		steps{
-			script{
-             		sh 'npm test'
-			}}
+		timeout(time: 10, unit: 'SECONDS')
+			{
+			  steps{
+				script{
+					sh 'npm test'
+				}}
+			}
+			
 	}
      	
 	    stage('Build image') {
