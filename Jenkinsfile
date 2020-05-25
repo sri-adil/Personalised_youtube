@@ -20,21 +20,14 @@ pipeline {
              		sh 'npm install'
 		}
 	}
-		stage('Test') {
-			options {
-				timeout(time: 20, unit: "SECONDS")
-			}
+		stage('Test') {				
 			  steps{
 				script{
 					try {
                         sh 'npm run test'
-			sleep(time: 20, unit: "SECONDS")
-                     
-                    } catch (Throwable e) {
-                        echo "Caught ${e.toString()}"
-                        currentBuild.result = "SUCCESS" (1)
-                    }}
 			}
+			}
+			  }
 			
 	}
      	
