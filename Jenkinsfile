@@ -27,7 +27,7 @@ pipeline {
 			  steps{
 				script{
 					try {
-                        sh 'npm test'
+                        sh 'npm run test'
 			sleep(time: 20, unit: "SECONDS")
                      
                     } catch (Throwable e) {
