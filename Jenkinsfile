@@ -1,6 +1,6 @@
 pipeline {
 	environment {
-		CI = ''
+		ci = ''
     		app = ''
  	 }
   	agent any
@@ -23,7 +23,7 @@ pipeline {
 		stage('Test') {
 		steps{
 			script{
-             		sh 'CI = true npm test'
+             		sh 'npm run test:ci'
 			}}
 	}
      	
