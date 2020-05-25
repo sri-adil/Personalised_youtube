@@ -22,8 +22,9 @@ pipeline {
 	}
 		stage('Test') {
 		steps{
+			script{
              		sh 'CI = true npm test'
-		}
+			}}
 	}
      	
 	    stage('Build image') {
