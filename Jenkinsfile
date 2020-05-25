@@ -14,6 +14,17 @@ pipeline {
 		git 'https://github.com/sri-adil/Personalised_youtube'
 	      	}
     	    }
+	
+		stage('Install dependencies') {
+		steps{
+             		sh 'npm install'
+		}
+	}
+		stage('Test') {
+		steps{
+             		sh 'npm test'
+		}
+	}
      	
 	    stage('Build image') {
 		 steps{
@@ -23,7 +34,6 @@ pipeline {
 		 }
 	    }
 
-	
 		
 	    stage('Push image') {
 		 steps{
@@ -43,13 +53,5 @@ pipeline {
 		}
 	}
   
-	stage('Test') {
-            steps {
-		 script{
-                	
-			 sh 'CI=true npm test'
-		 }
-            }
-        }
 	}
 }
