@@ -23,11 +23,11 @@ pipeline {
 		stage('Test') {				
 			  steps{
 				script{
-					try {
+					
                         sh 'npm run test'
 			}
 			}
-			  }
+			  
 			
 	}
      	
