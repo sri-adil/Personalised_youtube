@@ -20,16 +20,6 @@ pipeline {
              		sh 'npm install'
 		}
 	}
-		/*stage('Test') {				
-			  steps{
-				script{
-					
-                        sh 'npm run test'
-			}
-			}
-			  
-			
-	}*/
      	
 	    stage('Build image') {
 		 steps{
