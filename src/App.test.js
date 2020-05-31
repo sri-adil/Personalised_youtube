@@ -16,7 +16,7 @@ expect(wrapper.find(VideoDetail)).to.have.length(1);
 
 it('Checks VideoList component', function() {
 const wrapper = shallow(<App />); 
-expect(wrapper.find(SearchBar)).to.have.length(1);
+expect(wrapper.find(VideoList)).to.have.length(1);
 });
 
 it('Checks SearchBar component', function() {
